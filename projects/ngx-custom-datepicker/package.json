@@ -1,0 +1,34 @@
+{
+  "name": "ngx-custom-datepicker",
+  "version": "1.0.7",
+  "author": "Nikita <snayp13> (https://github.com/nsnayp13)",
+  "contributors": [{
+    "name": "Javier Peralta",
+    "email": "javierperalta@duck.com",
+    "url": "https://javier.pm"
+  }],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javissimo/angular-datepicker2"
+  },
+  "description": "Fork of \"https://github.com/nsnayp13/angular-datepicker2\" to make it compatible with latest Angular version",
+  "peerDependencies": {
+    "@angular/common": "~13.3.0",
+    "@angular/core": "~13.3.0"
+  },
+  "keywords": [
+    "angular",
+    "datepicker",
+    "calendar",
+    "date",
+    "picker",
+    "material",
+    "component",
+    "ui",
+    "input"
+  ],
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "license": "MIT"
+}
