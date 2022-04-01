@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -23,14 +26,15 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -43,7 +47,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -62,7 +65,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -88,27 +92,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         },
         "e2e": {
@@ -125,110 +111,29 @@
         }
       }
     },
-    "angular-calendar": {
+    "ngx-custom-datepicker": {
       "projectType": "library",
-      "root": "projects/angular-calendar",
-      "sourceRoot": "projects/angular-calendar/src",
+      "root": "projects/ngx-custom-datepicker",
+      "sourceRoot": "projects/ngx-custom-datepicker/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/angular-calendar/tsconfig.lib.json",
-            "project": "projects/angular-calendar/ng-package.json"
+            "tsConfig": "projects/ngx-custom-datepicker/tsconfig.lib.json",
+            "project": "projects/ngx-custom-datepicker/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/angular-calendar/src/test.ts",
-            "tsConfig": "projects/angular-calendar/tsconfig.spec.json",
-            "karmaConfig": "projects/angular-calendar/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/angular-calendar/tsconfig.lib.json",
-              "projects/angular-calendar/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "main": "projects/ngx-custom-datepicker/src/test.ts",
+            "tsConfig": "projects/ngx-custom-datepicker/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-custom-datepicker/karma.conf.js"
           }
         }
       }
-    },
-    "angular-calendar2": {
-      "projectType": "library",
-      "root": "projects/angular-calendar2",
-      "sourceRoot": "projects/angular-calendar2/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/angular-calendar2/tsconfig.lib.json",
-            "project": "projects/angular-calendar2/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/angular-calendar2/src/test.ts",
-            "tsConfig": "projects/angular-calendar2/tsconfig.spec.json",
-            "karmaConfig": "projects/angular-calendar2/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/angular-calendar2/tsconfig.lib.json",
-              "projects/angular-calendar2/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "angular-datepicker2": {
-      "projectType": "library",
-      "root": "projects/angular-datepicker2",
-      "sourceRoot": "projects/angular-datepicker2/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/angular-datepicker2/tsconfig.lib.json",
-            "project": "projects/angular-datepicker2/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/angular-datepicker2/src/test.ts",
-            "tsConfig": "projects/angular-datepicker2/tsconfig.spec.json",
-            "karmaConfig": "projects/angular-datepicker2/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/angular-datepicker2/tsconfig.lib.json",
-              "projects/angular-datepicker2/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    }},
+    }
+  },
   "defaultProject": "angular-datepicker"
 }

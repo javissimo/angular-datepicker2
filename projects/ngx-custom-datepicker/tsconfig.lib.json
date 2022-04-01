@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../out-tsc/lib",
+    "target": "es2021",
+    "declaration": true,
+    "strict": true,
+    "inlineSources": true,
+    "types": [],
+    "lib": ["dom", "es2021"]
+  },
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "preserveWhitespaces": true,
+    "strictTemplates": true,
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true,
+    "fullTemplateTypeCheck": true,
+    "enableIvy": true,
+    "compilationMode": "partial",
+    "strictInjectionParameters": true,
+    "enableResourceInlining": true
+  },
+  "exclude": ["src/test.ts", "**/*.spec.ts"]
+}

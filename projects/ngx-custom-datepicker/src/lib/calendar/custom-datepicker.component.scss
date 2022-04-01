@@ -1,0 +1,227 @@
+$animSpeed: 0.2s;
+
+ngx-custom-datepicker {
+  font-weight: bold;
+}
+
+button {
+  outline: none;
+  border: none;
+  background: none;
+  font-weight: unset;
+  font-family: unset;
+  font-size: unset;
+  cursor: pointer;
+}
+
+.nextPrevBtn {
+  background-color: inherit;
+  z-index: 1;
+}
+
+app-week-view {
+  display: flex;
+  flex-direction: row;
+}
+
+.dayWeekTitle {
+  display: flex;
+  flex: 1;
+  color: #989898;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.weekWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+app-month-select {
+  width: 200px;
+  display: flex;
+  float: left;
+  animation: appear $animSpeed ease-in-out;
+}
+
+.monthItem {
+  text-align: center;
+  width: 33%;
+  padding: 9px 0;
+  box-shadow: 0 0 0 1px #f4f3f3;
+  color: #313131;
+}
+
+.monthItem:hover {
+  user-select: none;
+  cursor: pointer;
+  background: #eee;
+  transition: $animSpeed;
+}
+
+app-month-view {
+  width: 200px;
+  animation: appear $animSpeed ease-in-out;
+  height: 100%;
+}
+
+@keyframes appear {
+  from {
+    transform: scale(0.6);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: opacity(0);
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.months {
+  display: flex;
+}
+
+.wrapMonths {
+  overflow: hidden;
+}
+
+.monthOne {
+  position: relative;
+}
+
+.monthOne.right {
+  animation: right $animSpeed ease-in-out;
+}
+.monthOne.left {
+  animation: left $animSpeed ease-in-out;
+}
+@keyframes left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes right {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+app-day-view {
+  float: left;
+  width: 100%;
+}
+
+.styledDay.isInPeriod {
+  background: #e9eafb !important  ;
+}
+
+.styledDay.isSelected {
+  border-radius: 4px;
+  color: white;
+  background: #515ae0 !important;
+}
+
+.styledDay.isSelected.period.end {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  color: black;
+  background: white !important;
+  border: 1px solid #515ae0;
+}
+.styledDay.isSelected.period.start {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  color: white;
+}
+
+.styledDay.isSelected.single {
+  color: white;
+}
+
+.day {
+  padding: 6px;
+}
+.dayDir {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
+.styledDay {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #313131;
+  transition: all 0.2s;
+}
+
+.styledDay:hover {
+  background: #e5e5e5;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dayWrap {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.calendarWrap {
+  width: fit-content;
+  display: flex;
+  background: #fff;
+  padding: 8px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.0375), 0px 2px 2px rgba(0, 0, 0, 0.0375), 0px 4px 4px rgba(0, 0, 0, 0.0375),
+    0px 8px 8px rgba(0, 0, 0, 0.0375);
+  flex-direction: column;
+  border-radius: 4px;
+}
+
+.dateSelector {
+  float: left;
+  display: flex;
+  flex-direction: row;
+  transition: all 0.2s;
+}
+
+.f1 {
+  display: flex;
+  flex: 1;
+}
+
+.monthHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  background-image: linear-gradient(#e5e5e5, #e5e5e5);
+  background-position: bottom center;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+}
+
+.monthHeader::first-letter {
+  text-transform: uppercase;
+}
+
+.monthHeader:hover {
+  user-select: none;
+}

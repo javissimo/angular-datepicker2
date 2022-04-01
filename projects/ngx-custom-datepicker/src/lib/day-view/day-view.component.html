@@ -1,0 +1,22 @@
+<div class="dayWrap">
+  <div
+    class="styledDay"
+    *ngIf="thisMonth"
+    (click)="onClick()"
+    [ngClass]="{
+      isSelected: dayService.day.isSelected,
+      isInPeriod: dayService.day.isInPeriod,
+      period: getSelectMode() === 'period',
+      single: getSelectMode() === 'single',
+      end: isStartOrEndDatePeriod() === 'end',
+      start: isStartOrEndDatePeriod() === 'start'
+    }"
+  >
+    <span *ngIf="!dayDirective" class="day">
+      {{ dayService.day.date | date: 'd' }}
+    </span>
+    <div class="dayDir">
+      <ng-template #tpl></ng-template>
+    </div>
+  </div>
+</div>

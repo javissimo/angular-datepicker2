@@ -1,0 +1,27 @@
+<div #wrap class="monthWrap monthOne {{ animationStep }}">
+  <div class="monthHeader">
+    <button (click)="goPrev()" class="nextPrevBtn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 6L9 12L15 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <button class="month" (click)="showYears()">{{ date | date: 'LLLL yyyy' }}</button>
+    <button (click)="goNext()" class="nextPrevBtn" style="right: 0">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 6L15 12L9 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+  </div>
+  <div class="weekWrap">
+    <div style="display: flex">
+      <div *ngFor="let d of weekDays" class="dayWeekTitle">{{ d | date: 'EEEEE' }}</div>
+    </div>
+    <app-week-view
+      *ngFor="let weekStartDate of weeks"
+      [date]="weekStartDate"
+      [dayDirectives]="getWeekDayDirectives(weekStartDate)"
+      [firstMonthDate]="date"
+    >
+    </app-week-view>
+  </div>
+</div>

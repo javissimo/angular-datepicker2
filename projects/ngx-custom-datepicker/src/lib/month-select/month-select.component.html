@@ -1,0 +1,23 @@
+<div #wrap style="display: flex; flex-direction: column; flex: 1" class="monthWrap monthOne {{ animationStep }}">
+  <div class="monthHeader">
+    <button (click)="goPrev()" class="nextPrevBtn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 6L9 12L15 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <span> {{ date | date: 'yyyy' }}</span>
+    <button (click)="goNext()" class="nextPrevBtn" style="right: 0">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 6L15 12L9 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+  </div>
+  <div style="display: flex; flex-direction: row; flex: 1; flex-wrap: wrap">
+    <ng-container *ngFor="let month of months; let i = index">
+      <div class="monthItem" (click)="setMonth(month)">
+        {{ month | date: 'LLL' }}
+      </div>
+      <div *ngIf="(i + 1) % 3 === 0 && i != 0 && i != 11"></div>
+    </ng-container>
+  </div>
+</div>
