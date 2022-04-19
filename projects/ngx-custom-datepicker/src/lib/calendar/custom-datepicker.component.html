@@ -1,7 +1,7 @@
 <div id="date-selector" class="calendarWrap">
   <div class="headerCalendar"></div>
   <div class="dateSelector">
-    <div class="wrapMonths" [ngStyle]="{ width: '200px' }">
+    <div class="wrapMonths">
       <div class="months" *ngIf="getViewSelectorMode() === 'days'">
         <app-month-view
           *ngFor="let date of getCalendar()"

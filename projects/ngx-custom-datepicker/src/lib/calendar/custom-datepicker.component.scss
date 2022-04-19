@@ -35,16 +35,9 @@ app-week-view {
   display: flex;
 }
 
-.weekWrap {
-  display: flex;
-  flex-direction: column;
-}
-
 app-month-select {
-  width: 200px;
   display: flex;
   float: left;
-  animation: appear $animSpeed ease-in-out;
 }
 
 .monthItem {
@@ -63,7 +56,6 @@ app-month-select {
 }
 
 app-month-view {
-  width: 200px;
   animation: appear $animSpeed ease-in-out;
   height: 100%;
 }
@@ -93,16 +85,6 @@ app-month-view {
   overflow: hidden;
 }
 
-.monthOne {
-  position: relative;
-}
-
-.monthOne.right {
-  animation: right $animSpeed ease-in-out;
-}
-.monthOne.left {
-  animation: left $animSpeed ease-in-out;
-}
 @keyframes left {
   from {
     transform: translateX(-100%);
