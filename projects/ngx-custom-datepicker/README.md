@@ -1,24 +1,12 @@
-# Angular Datepicker 2
+# ngx-custom-datepicker
 
-v3.x.x
+Fork of [Angular Datepicker 2](https://github.com/nsnayp13/angular-datepicker2)
 
-![Node.js CI](https://github.com/nsnayp13/ngx-custom-datepicker/workflows/Node.js%20CI/badge.svg)
-
-`npm i ngx-custom-datepicker`
-
-now @angular/core: ^8.2.14
-
-## DEMO
-
-[https://javier.pm/ngx-custom-datepicker/](https://javier.pm/ngx-custom-datepicker/)
-
-## Getting started
-
-Set to imports app.module.ts `import { AngularDatepicker2Module } from 'ngx-custom-datepicker'`. Then you can use it by tag `<ngx-custom-datepicker></ngx-custom-datepicker>`.
+Live demo [here](https://javier.pm/ngx-custom-datepicker)
 
 ## Options
 
-Props of `AngularDatepicker2`:
+Props of `ngx-custom-datepicker`:
 
 ```javascript
 
@@ -31,9 +19,6 @@ Props of `AngularDatepicker2`:
 // Date whould be render for default calendar .
 shownDate: Date
 
-// Alignment of days in a week. Default horizontal.
-vertical: boolean
-
 // Start week day, default 0
 weekStart: number
 
@@ -45,11 +30,11 @@ selectMode: SelectMode
 
 // Callback event when click on day
 // its returns a Day object before change self state by click
-(dayClick): Day
+(dayClick):Day
 
 // Callback event when selectedDatesChange changed
 // its returns a Date[]
-(selectedDatesChange): Date[]
+(selectedDatesChange):Date[]
 ```
 
 ## i18n
@@ -59,6 +44,10 @@ set `registerLocaleData(locale, "locale")` in your `app.module.ts`. See [https:/
 ## Example
 
 ```javascript
+this.selectedDates = [new Date(2020, 3, 7), new Date(2020, 3, 9)];
+
+this.shownDate = new Date(2020, 3, 7);
+
 this.days = [
   {
     isHovered: false,
