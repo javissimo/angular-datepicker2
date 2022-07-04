@@ -9,7 +9,8 @@
       period: getSelectMode() === 'period',
       single: getSelectMode() === 'single',
       end: isStartOrEndDatePeriod() === 'end',
-      start: isStartOrEndDatePeriod() === 'start'
+      start: isStartOrEndDatePeriod() === 'start',
+      invalid: isValidDate()
     }"
   >
     <span *ngIf="!dayDirective" class="day">

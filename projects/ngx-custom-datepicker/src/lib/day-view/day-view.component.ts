@@ -79,6 +79,13 @@ export class DayViewComponent implements OnInit, OnChanges, OnDestroy, AfterView
     this.dayService.toggleDate();
   }
 
+  isValidDate(): boolean {
+    const actualDate = this.dayService.day.date;
+    if (this.calendarService.minDate && actualDate < this.calendarService.minDate) return true;
+    if (this.calendarService.maxDate && actualDate > this.calendarService.maxDate) return true;
+    return false;
+  }
+
   ngOnDestroy(): void {
     this.subscriptions.forEach((subscription: Subscription) => {
       subscription.unsubscribe();

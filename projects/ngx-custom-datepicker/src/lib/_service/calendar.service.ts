@@ -76,6 +76,9 @@ export class CalendarService {
   weekStart = 0;
   weekends: number[] = [];
 
+  minDate: Date;
+  maxDate: Date;
+
   animationStep = new BehaviorSubject('stop');
 
   recountWidth = new BehaviorSubject(1);

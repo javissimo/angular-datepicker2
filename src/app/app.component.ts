@@ -11,6 +11,8 @@ export class AppComponent implements OnInit {
   date: Date;
   selectedDates: Date[];
   singleDate: Date[] = [];
+  minDate: Date;
+  maxDate: Date;
 
   lol: Calendar;
   days: Day[];
