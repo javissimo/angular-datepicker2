@@ -11,13 +11,15 @@
     </svg>
   </button>
 </div>
-<div style="display: flex">
-  <div *ngFor="let d of weekDays" class="dayWeekTitle">{{ d | date: 'EEEEE' }}</div>
+<div class="monthBody" [ngClass]="animationStep">
+  <div style="display: flex">
+    <div *ngFor="let d of weekDays" class="dayWeekTitle">{{ d | date: 'EEEEE' }}</div>
+  </div>
+  <app-week-view
+    *ngFor="let weekStartDate of weeks"
+    [date]="weekStartDate"
+    [dayDirectives]="getWeekDayDirectives(weekStartDate)"
+    [firstMonthDate]="date"
+  >
+  </app-week-view>
 </div>
-<app-week-view
-  *ngFor="let weekStartDate of weeks"
-  [date]="weekStartDate"
-  [dayDirectives]="getWeekDayDirectives(weekStartDate)"
-  [firstMonthDate]="date"
->
-</app-week-view>

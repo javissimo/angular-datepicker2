@@ -12,12 +12,14 @@
       </svg>
     </button>
   </div>
-  <div style="display: flex; flex-direction: row; flex: 1; flex-wrap: wrap">
-    <ng-container *ngFor="let month of months; let i = index">
-      <div class="monthItem" (click)="setMonth(month)" [ngClass]="{ invalid: isValidMonth(month) }">
-        {{ month | date: 'LLL' }}
-      </div>
-      <div *ngIf="(i + 1) % 3 === 0 && i != 0 && i != 11"></div>
-    </ng-container>
+  <div class="monthBody" [ngClass]="animationStep">
+    <div style="display: flex; flex-direction: row; flex: 1; flex-wrap: wrap">
+      <ng-container *ngFor="let month of months; let i = index">
+        <div class="monthItem" (click)="setMonth(month)" [ngClass]="{ invalid: isValidMonth(month) }">
+          {{ month | date: 'LLL' }}
+        </div>
+        <div *ngIf="(i + 1) % 3 === 0 && i != 0 && i != 11"></div>
+      </ng-container>
+    </div>
   </div>
 </div>
