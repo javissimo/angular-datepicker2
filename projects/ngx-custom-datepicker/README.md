@@ -35,6 +35,12 @@ selectMode: SelectMode
 // Callback event when selectedDatesChange changed
 // its returns a Date[]
 (selectedDatesChange):Date[]
+
+//Minimum Date, everything before will be disabled
+minDate: Date
+
+//Maximum Date, everything after it will be disabled
+maxDate: Date
 ```
 
 ## i18n
@@ -47,6 +53,7 @@ set `registerLocaleData(locale, "locale")` in your `app.module.ts`. See [https:/
 this.selectedDates = [new Date(2020, 3, 7), new Date(2020, 3, 9)];
 
 this.shownDate = new Date(2020, 3, 7);
+
 
 this.days = [
   {
@@ -72,6 +79,8 @@ this.days = [
   [selectMode]="'period'"
   [weekends]="[0,1]"
   [weekStart]="1"
+  [minDate]="minDate"
+  [maxDate]="maxDate"
 >
 </ngx-custom-datepicker>
 ```
