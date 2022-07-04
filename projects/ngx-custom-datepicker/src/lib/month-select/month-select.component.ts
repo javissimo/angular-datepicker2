@@ -33,6 +33,15 @@ export class MonthSelectComponent implements OnInit {
     });
   }
 
+  isValidMonth(month: Date): boolean {
+    const minMonth = new Date(
+      new Date(this.calendarService.minDate).setMonth(new Date(this.calendarService.minDate).getMonth() - 1)
+    );
+    if (this.calendarService.minDate && month < minMonth) return true;
+    if (this.calendarService.maxDate && month > this.calendarService.maxDate) return true;
+    return false;
+  }
+
   setMonth(month: Date): void {
     this.calendarService.getShownMonths(month);
   }

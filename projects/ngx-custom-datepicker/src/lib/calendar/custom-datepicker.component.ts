@@ -69,6 +69,8 @@ export class CustomDatepickerComponent implements OnInit, OnChanges, AfterViewIn
    * @See `SelectMode`
    */
   @Input() selectMode = SelectMode.Single;
+  @Input() minDate: Date;
+  @Input() maxDate: Date;
 
   @ViewChildren('column') columns: any;
 
@@ -123,6 +125,13 @@ export class CustomDatepickerComponent implements OnInit, OnChanges, AfterViewIn
     this.calendarService.setSelectedDates(this.selectedDates);
     this.calendarService.setDays(this.days);
     this.calendarService.getShownMonths(this.shownDate);
+
+    if (this.minDate) {
+      const minDate = this.minDate;
+      minDate.setDate(minDate.getDate() - 1);
+      this.calendarService.minDate = minDate;
+    }
+    this.calendarService.maxDate = this.maxDate;
   }
 
   getCalendar(): Date[] {

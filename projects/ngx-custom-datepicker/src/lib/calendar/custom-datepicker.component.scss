@@ -48,6 +48,11 @@ app-month-select {
   color: #313131;
 }
 
+.monthItem.invalid {
+  color: #b2b2b2 !important;
+  pointer-events: none;
+}
+
 .monthItem:hover {
   user-select: none;
   cursor: pointer;
@@ -135,6 +140,11 @@ app-day-view {
   color: white;
 }
 
+.styledDay.invalid {
+  color: #b2b2b2;
+  pointer-events: none;
+}
+
 .day {
   padding: 6px;
 }
@@ -169,7 +179,7 @@ app-day-view {
 }
 
 .calendarWrap {
-  width: 208px;
+  // width: 208px;
   display: flex;
   background: #fff;
   padding: 8px;
