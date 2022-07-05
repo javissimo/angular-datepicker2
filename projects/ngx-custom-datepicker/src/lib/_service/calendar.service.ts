@@ -76,8 +76,8 @@ export class CalendarService {
   weekStart = 0;
   weekends: number[] = [];
 
-  minDate: Date;
-  maxDate: Date;
+  minDate: Date | undefined;
+  maxDate: Date | undefined;
 
   animationStep = new BehaviorSubject('stop');
 
@@ -132,6 +132,7 @@ export class CalendarService {
     }
     this.calendar = months;
     this.viewSelectorMode = 'months';
+    this.animationStep.next('stop');
   }
 
   getShownMonths(date?: Date): void {
@@ -145,9 +146,9 @@ export class CalendarService {
     for (let i = countMonths - 1; i >= 0; i--) {
       months.push(new Date(lastDate).adjustMonth(-i));
     }
-
     this.calendar = months;
     this.viewSelectorMode = 'days';
+    this.animationStep.next('stop');
   }
 
   goPrev(firstDate: Date): void {
@@ -167,7 +168,6 @@ export class CalendarService {
     dates = [...this.calendar];
     dates.splice(dates.length - 1, 1);
     this.calendar = dates;
-    this.animationStep.next('stop');
   }
 
   goNext(lastDate: Date): void {

@@ -60,26 +60,14 @@ app-month-select {
   transition: $animSpeed;
 }
 
-app-month-view {
-  animation: appear $animSpeed ease-in-out;
+.monthBody.left {
+  animation: left $animSpeed ease-in-out;
   height: 100%;
 }
 
-@keyframes appear {
-  from {
-    transform: scale(0.6);
-    opacity: 0.6;
-  }
-
-  50% {
-    transform: opacity(0);
-    transform: scale(0.8);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.monthBody.right {
+  animation: right $animSpeed ease-in-out;
+  height: 100%;
 }
 
 .months {
