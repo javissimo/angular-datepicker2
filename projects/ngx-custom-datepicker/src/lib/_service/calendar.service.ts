@@ -76,8 +76,8 @@ export class CalendarService {
   weekStart = 0;
   weekends: number[] = [];
 
-  minDate: Date = new Date();
-  maxDate: Date = new Date();
+  minDate: Date | undefined;
+  maxDate: Date | undefined;
 
   animationStep = new BehaviorSubject('stop');
 

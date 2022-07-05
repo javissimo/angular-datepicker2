@@ -81,10 +81,12 @@ export class DayViewComponent implements OnInit, OnChanges, OnDestroy, AfterView
 
   isValidDate(): boolean {
     const actualDate = this.dayService.day.date;
-    const minDate = new Date(
-      new Date(this.calendarService.minDate).setDate(new Date(this.calendarService.minDate).getDate() - 1)
-    );
-    if (this.calendarService.minDate && actualDate < minDate) return true;
+    if (this.calendarService.minDate) {
+      const minDate = new Date(
+        new Date(this.calendarService.minDate).setDate(new Date(this.calendarService.minDate).getDate() - 1)
+      );
+      if (actualDate < minDate) return true;
+    }
     if (this.calendarService.maxDate && actualDate > this.calendarService.maxDate) return true;
     return false;
   }

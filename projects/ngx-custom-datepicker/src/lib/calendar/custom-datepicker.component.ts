@@ -70,8 +70,8 @@ export class CustomDatepickerComponent implements OnInit, OnChanges, AfterViewIn
    */
   @Input() selectMode = SelectMode.Single;
 
-  @Input() minDate: Date = new Date();
-  @Input() maxDate: Date = new Date();
+  @Input() minDate?: Date;
+  @Input() maxDate?: Date;
 
   @ViewChildren('column') columns: any;
 
