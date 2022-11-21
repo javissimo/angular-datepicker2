@@ -10,7 +10,7 @@
     "module": "es2020",
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2021",
+    "target": "ES2022",
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2021", "dom"],
     "paths": {
@@ -18,7 +18,8 @@
       "angular-calendar/*": ["dist/angular-calendar/*"],
       "ngx-custom-datepicker": ["dist/ngx-custom-datepicker"],
       "ngx-custom-datepicker/*": ["dist/ngx-custom-datepicker/*"]
-    }
+    },
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

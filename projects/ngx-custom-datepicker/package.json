@@ -1,10 +1,10 @@
 {
   "name": "ngx-custom-datepicker",
-  "version": "14.0.3",
+  "version": "15.0.0",
   "description": "Fork of nsnayp13/angular-datepicker2 to make it compatible with latest Angular version",
   "peerDependencies": {
-    "@angular/common": "^14.0.4",
-    "@angular/core": "^14.0.4"
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0"
   },
   "repository": {
     "type": "git",
